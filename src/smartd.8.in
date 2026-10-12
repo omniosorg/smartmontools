@@ -146,6 +146,7 @@ Authoritative list of disk devices is obtained from sysctl
 Examine all entries \fB"/dev/rdsk/*s0"\fP for SCSI disk devices,
 including SATA disks accessed via SAT, and entries \fB"/dev/rmt/*"\fP
 for SCSI tape devices.
+On illumos, also examine all NVMe controllers \fB"nvme[0\-9]*"\fP.
 .\" %ENDIF OS Solaris
 .\" %IF OS Darwin
 .IP \fBDARWIN:\fP 9

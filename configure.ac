@@ -750,6 +750,10 @@ case "${host}" in
   *-*-solaris*)
     os_deps='os_solaris.lo'
     os_mailer='mailx'
+    # illumos libnvme provides NVMe support
+    AC_CHECK_HEADERS([libnvme.h], [AC_CHECK_LIB([nvme], [nvme_init],
+      [AC_DEFINE(HAVE_LIBNVME, 1, [Define to 1 if you have the 'nvme' library (-lnvme).])
+       os_libs='-lnvme -ldevinfo'])])
     os_solaris=yes
     os_man_filter=Solaris
     ;;

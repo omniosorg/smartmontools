@@ -116,6 +116,10 @@ your architecture.
 Use the forms \fB"/dev/rdsk/c?t?d?s?"\fP for SCSI disk devices,
 including SATA disks accessed via SAT, and \fB"/dev/rmt/*"\fP for SCSI
 tape devices.
+On illumos, use the forms \fB"nvme[0\-9]*"\fP for NVMe controllers and
+\fB"nvme[0\-9]*/NS"\fP for NVMe namespaces as accepted by \fBnvmeadm\fP(8),
+where NS is a namespace id, EUI64 or NGUID.
+A \fB"/dev/rdsk/*"\fP NVMe namespace device may also be used.
 .\" %ENDIF OS Solaris
 .\" %IF OS Windows Cygwin
 .IP \fBWINDOWS\fP: 9
